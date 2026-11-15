@@ -6,7 +6,7 @@ This repository documents my journey of implementing major GAN architectures fro
 
 The planned learning roadmap is as follows:
 
-1. Vanilla GAN
+1. Vanilla GAN (Goodfellow, Ian J., et al. "Generative adversarial nets." Advances in neural information processing systems 27 (2014).)
 2. Conditional GAN
 3. DCGAN
 4. WGAN
@@ -16,6 +16,10 @@ The planned learning roadmap is as follows:
 8. StyleGAN
 
 ## Milestones
+
+| # | Milestone & Year | Core Breakthrough / Concept | Used Dataset | Completed Date |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **Vanilla GAN** | Basic minimax game using Multi-Layer Perceptrons (MLPs) and Binary Cross Entropy loss. | MNIST | 15.11.2026 |
 
 ## Environment Setup
 
