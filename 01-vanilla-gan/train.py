@@ -10,7 +10,7 @@ from torchvision import datasets, transforms
 from model import Generator, Discriminator
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.weights_init import weights_init_normal
-from utils.visualization import save_generated_images
+from utils.visualization import save_gan_images
 
 def main():
     parser = argparse.ArgumentParser()
@@ -84,7 +84,7 @@ def main():
             if (i+1) % 400 == 0:
                 print(f"Epoch {epoch+1}/{config["num_epochs"]}, Batch {i+1}/{len(train_dataloader)}: D loss = {d_loss.item():.4f}, G loss = {g_loss.item():.4f}")
 
-        save_generated_images(generator, config["latent_dim"], device, epoch, output_dir="outputs")
+        save_gan_images(generator, config["latent_dim"], device, epoch, output_dir="outputs")
 
 if __name__ == "__main__":
     main()
