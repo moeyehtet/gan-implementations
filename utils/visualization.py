@@ -27,3 +27,17 @@ def save_cgan_images(generator, fixed_z, num_classes, device, epoch, output_dir=
         path = os.path.join(output_dir, f"epoch_{epoch+1:03d}.png")
         vutils.save_image(grid, path)
     generator.train()
+
+def save_dcgan_images(generator, fixed_z, num_classes, device, epoch, output_dir="outputs"):
+    os.makedirs(output_dir, exist_ok=True)
+    n_per_class = fixed_z.size(0) // num_classes
+    labels = torch.arange(num_classes, device=device).repeat_interleave(n_per_class)
+
+    generator.eval()
+    with torch.no_grad():
+        fake_images = generator(fixed_z.to(device), labels).detach().cpu()
+        fake_images = (fake_images + 1) / 2
+        grid = vutils.make_grid(fake_images, nrow=n_per_class, normalize=False)
+        path = os.path.join(output_dir, f"epoch_{epoch+1:03d}.png")
+        vutils.save_image(grid, path)
+    generator.train()
