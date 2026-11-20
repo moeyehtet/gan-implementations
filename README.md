@@ -9,18 +9,18 @@ The planned learning roadmap is as follows:
 1. Vanilla GAN (I. J. Goodfellow et al., “Generative Adversarial Nets,” Adv. Neural Inf. Process. Syst., vol. 27, 2014.)
 2. Conditional GAN (M. Mirza and S. Osindero, “Conditional Generative Adversarial Nets,” 2014, arXiv. doi: 10.48550/arXiv.1411.1784.)
 3. DCGAN
-4. WGAN
-5. Pix2Pix
-6. CycleGAN
-7. Pix2PixHD
-8. StyleGAN
+4. Pix2Pix
+5. CycleGAN
+6. Pix2PixHD
+7. StyleGAN
 
 ## Milestones
 
 | # | Milestone & Year | Core Breakthrough / Concept | Used Dataset | Completed Date |
 | :--- | :--- | :--- | :--- | :--- |
 | **01** | **Vanilla GAN** | Basic minimax game using Multi-Layer Perceptrons (MLPs) and Binary Cross Entropy loss. | MNIST | 15.11.2026 |
-| **02** | **Conditional GAN** | Extension of vanilla GAN by adding conditioning with class labels to both generator and discriminator to control the modes of data being generated. | Fashion-MNIST | 18.11.2026 | 
+| **02** | **Conditional GAN** | Extension of vanilla GAN by adding conditioning with class labels to both generator and discriminator to control the modes of data being generated. | Fashion-MNIST | 18.11.2026 |
+| **03** | **Deep Convolutional GAN** | Replaces MLPs with fully convolutional generator and discriminator for stable training on natural images. Implemented as class-conditional DCGAN to control the class of images being generated. | CIFAR-10 | 20.11.2026 |
 
 ## Environment Setup
 
