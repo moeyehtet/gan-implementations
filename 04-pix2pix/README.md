@@ -82,9 +82,9 @@ The discriminator uses Binary Cross Entropy loss with logit scores. However, the
 
 $$
 \begin{align}
-\mathcal{L}_{cGAN}(G, D) = \mathbb{E}_{x, y}[\log D(x, y)] + \mathbb{E}_{x, z}[\log (1 - D(x, G(x, z)))] \\
-\mathcal{L}_{L1}(G) = \mathbb{E}_{x, y, z}[ || y - G(x, z) ||_{1} ] \\
-\mathcal{L}_{pix2pix} = \mathcal{L}_{cGAN} + \lambda * \mathcal{L}_{L1}
+\mathcal{L}_{cGAN}(G, D) &= \mathbb{E}_{x, y}[\log D(x, y)] + \mathbb{E}_{x, z}[\log (1 - D(x, G(x, z)))] \\
+\mathcal{L}_{L1}(G) &= \mathbb{E}_{x, y, z}[ || y - G(x, z) ||_{1} ] \\
+\mathcal{L}_{pix2pix} &= \mathcal{L}_{cGAN} + \lambda * \mathcal{L}_{L1}
 \end{align}
 $$
 
