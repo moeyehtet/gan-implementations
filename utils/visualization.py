@@ -41,3 +41,22 @@ def save_dcgan_images(generator, fixed_z, num_classes, device, epoch, output_dir
         path = os.path.join(output_dir, f"epoch_{epoch+1:03d}.png")
         vutils.save_image(grid, path)
     generator.train()
+
+def save_pix2pix_images(model, data_loader, device, epoch, output_dir="outputs"):
+    os.makedirs(output_dir, exist_ok=True)
+    num_samples = len(data_loader)
+
+    model.eval()
+    with torch.no_grad():
+        segmented_imgs, real_imgs = next(iter(data_loader))
+        segmented_imgs = segmented_imgs[:num_samples].to(device)
+        real_imgs = real_imgs[:num_samples].to(device)
+
+        fake_imgs = model.generator(segmented_imgs)
+
+        rows = torch.stack([segmented_imgs, real_imgs, fake_imgs], dim=1)
+        rows = rows.flatten(0, 1)
+        grid = vutils.make_grid(rows, nrow=3, normalize=True, value_range=(-1, 1))
+        path = os.path.join(output_dir, f"epoch_{epoch+1:03d}.png")
+        vutils.save_image(grid, path)
+    model.train()
