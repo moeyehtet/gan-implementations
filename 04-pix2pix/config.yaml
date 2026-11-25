@@ -1,0 +1,7 @@
+num_epochs: 200
+learning_rate: 0.0002
+lambda_l1: 100
+b1: 0.5
+b2: 0.999
+train_batch_size: 1
+val_batch_size: 10
